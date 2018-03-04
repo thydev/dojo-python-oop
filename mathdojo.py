@@ -42,16 +42,20 @@ class MathDojo(object):
 
 md = MathDojo()
 md.add(2, 3, 2, 1).subtract(2, 1, 1).subtract(1)
-print md.result
+print md.result 
+# 3
 
 md.result = 0
 md.add(2).add(2, 5).subtract(3, 2)
 print md.result
+# 4
 
 md.result = 0
 md.add([2]).add([2, 1, 1], [5, 2], 5).add(2, 5).subtract(3, 2)
 print md.result
+# 20
 
 md.result = 0
 md.add([1], 3,4).add([3,5,7,8], [2,4.3,1.25]).subtract(2, [2,3], [1.1,2.3])
 print md.result
+# 28.15
