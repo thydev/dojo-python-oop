@@ -1,3 +1,4 @@
+# pylint:disable=print-statement
 class Underscore(object):
     def map(self, lst, callback):
         new_lst = []
