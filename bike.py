@@ -16,17 +16,19 @@ class Bike(object):
         if self.miles < 0:
             self.miles = 0
         return self
+    def __repr__(self):
+        return "<Bike object Price: {} Speed: {} Mileage: {}>".format(self.price, self.max_speed, self.miles)
+if __name__ == "__main__":
+    bike1 = Bike(200, "20mph")
+    bike1.displayInfo()
+    bike2 = Bike(400, "30mph")
+    bike2.displayInfo()
+    bike3 = Bike(1500, "25mph")
+    bike3.displayInfo()
 
-bike1 = Bike(200, "20mph")
-bike1.displayInfo()
-bike2 = Bike(400, "30mph")
-bike2.displayInfo()
-bike3 = Bike(1500, "25mph")
-bike3.displayInfo()
-
-bike1.ride().ride().ride().reverse()
-bike2.ride().ride().reverse().reverse()
-bike3.reverse().reverse().reverse()
-bike1.displayInfo()
-bike2.displayInfo()
-bike3.displayInfo()
+    bike1.ride().ride().ride().reverse()
+    bike2.ride().ride().reverse().reverse()
+    bike3.reverse().reverse().reverse()
+    bike1.displayInfo()
+    bike2.displayInfo()
+    bike3.displayInfo()

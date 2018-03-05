@@ -1,10 +1,4 @@
-
-class Patient(object):
-    def __init__(self, uid, name, allergy):
-        self.uid = uid
-        self.name = name
-        self.allergy = allergy
-        self.bed_number = ""
+import patient
 
 class Hospital(object):
     def __init__(self, name, capacity):
@@ -36,19 +30,21 @@ class Hospital(object):
             print ""
 
         return self
+    def __repr__(self):
+        return "<Hopital object {} Capacity: {}>".format(self.name, self.capacity)
+if __name__ == "__main__":
+    p1 = patient.Patient("p1", "Dodo", "Milk")
+    p2 = patient.Patient("p2", "CoCo", "Coffe")
+    p3 = patient.Patient("p3", "Sodo", "Cheese")
+    p4 = patient.Patient("p4", "FoFo", "Banana")
+    p5 = patient.Patient("p5", "Vodo", "Apple")
 
-p1 = Patient("p1", "Dodo", "Milk")
-p2 = Patient("p2", "CoCo", "Coffe")
-p3 = Patient("p3", "Sodo", "Cheese")
-p4 = Patient("p4", "FoFo", "Banana")
-p5 = Patient("p5", "Vodo", "Apple")
+    h = Hospital("Ever Green", 3)
+    h.admit(p1, "bed101")
+    h.admit(p2, "bed201")
+    h.admit(p3, "bed1234")
+    h.admit(p4, "bed1235")
+    h.admit(p5, "bed1236")
 
-h = Hospital("Ever Green", 3)
-h.admit(p1, "bed101")
-h.admit(p2, "bed201")
-h.admit(p3, "bed1234")
-h.admit(p4, "bed1235")
-h.admit(p5, "bed1236")
-
-h.discharge("p3")
-h.display_info()
+    h.discharge("p3")
+    h.display_info()
